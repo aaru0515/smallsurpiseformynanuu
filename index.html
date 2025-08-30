@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Surprise for my love 💖🎂</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #fff;
+      text-align: center;
+    }
+
+    .slide {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      position: absolute;
+      transition: opacity 0.8s ease-in-out;
+      opacity: 0;
+    }
+    .slide.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .photo {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 3px solid #fff;
+      box-shadow: 0 0 25px rgba(255,182,193,0.9);
+      margin-bottom: 20px;
+      max-width: 90vw;
+      max-height: 60vh;
+    }
+
+    h1, .message, .nextBtn {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+
+    h1 { top: 5%; font-size: 2.2em; max-width: 85%; }
+    .message {
+      top: 2%;
+      font-size: 0.9em;
+      width: 90%;
+      background: rgba(0,0,0,0.4);
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      line-height: 1.5em;
+    }
+
+    .nextBtn {
+      bottom: 5%;
+      padding: 10px 20px;
+      font-size: 1em;
+      background: rgba(255,255,255,0.8);
+      color: #ee9ca7;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .ring-box {
+      width: 150px;
+      height: 150px;
+      border: 5px solid #fff;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3em;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+      background: rgba(255,255,255,0.1);
+      animation: bounce 1s infinite alternate;
+      z-index: 2;
+    }
+
+    @keyframes bounce {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+
+    .final-message {
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.6em;
+      text-align: center;
+      max-width: 90%;
+      opacity: 0;
+      animation: slideUp 1s ease-out forwards;
+      animation-delay: 0.5s;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    }
+
+    @keyframes slideUp {
+      from { transform: translate(-50%, 100px); opacity: 0; }
+      to { transform: translate(-50%, 0); opacity: 1; }
+    }
+
+    /* Emoji shower */
+    .emoji {
+      position: fixed;
+      top: -50px;
+      font-size: 2rem;
+      animation: fall linear forwards;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(110vh); }
+    }
+
+    /* Slide 4 big emoji background */
+    .big-emoji-bg {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+
+    .big-emoji-bg div.emoji-bg {
+      font-size: 8em;
+      opacity: 0.2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    .overlay-text {
+      background: rgba(0,0,0,0.4);
+      padding: 15px;
+      border-radius: 12px;
+      max-width: 90%;
+      text-align: center;
+      font-size: 1em;
+      line-height: 1.5em;
+      color: #fff;
+      z-index: 2;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5em; }
+      .message { font-size: 0.8em; }
+      .photo { width: 250px; height: 250px; }
+      .ring-box { width: 110px; height: 110px; font-size: 2em; }
+      .final-message { font-size: 1.2em; }
+      .big-emoji-bg div.emoji-bg { font-size: 5em; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="photos/birthday-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Slide 1 -->
+  <div class="slide active">
+      <img src="photos/photo1.jpg" alt="First Slide Image" class="photo">
+      <h1>Happy Birthday meroo Budii (mrs.acharya)🎂💋❤️🎉</h1>
+      <button class="nextBtn">Next ➡️</button>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide">
+      <img src="photos/photo2.jpg" alt="Second Slide Image" class="photo">
+      <h1>Hehehehe Hernu ta bettaa hami dui jana kastoo ramro dekhya sageii💋❤️</h1>
+      <button class="nextBtn">Next ➡️</button>
+  </div>
+
+  <!-- Slide 3: Full love message -->
+  <div class="slide">
+      <div class="message">
+        Happiestt Birthdayy Meroo sweetheart darlingg🎂❤️💋❤️.<br>
+        Meroo bachhaa this day is really special for youu and me babee kina vane bettaa yo din mero mamu lee meroo life laii janma dinu vako thiyo.<br><br>
+        Aaja mero radha ra krishna bhagwan ko radha janmeko din hehehe💖.<br>
+        May god bless youu bachhaa maa tapai ko sukha dukha sabai sath dinexuu mero betta.<br><br>
+        And wait and watch babee i will prove you wrong, tapai ko sab le malai xodera janxa walla myth wrong prove garxuu.<br>
+        Ma janna babee tapaii ko sanna jadeina kailee bujnu vo ni betta.<br>
+        Tapai espically dukha ma mero sadheii sath hunexaa nanuuu, tapai dukha ra mero dukha eutei hoo mayaa j vayenii tapai ko man ma saga xa mero man tapai saga❤️.<br><br>
+        I lovee you soo soo soo muchh bettaaa💋❤️💋❤️.<br>
+      </div>
+      <img src="photos/photo2.jpg" alt="Background" class="photo" style="width:350px;height:350px;">
+      <button class="nextBtn">Next ➡️</button>
+  </div>
+
+  <!-- Slide 4: Single big emoji background -->
+  <div class="slide big-emoji-bg">
+      <div class="emoji-bg">💑</div>
+      <div class="overlay-text">
+        Babeee yo maya tapai ko lagii ajha jhan gahiro banxa jindagii sangga naniiiii💑❤️
+      </div>
+      <button class="nextBtn">Next ➡️</button>
+  </div>
+
+  <!-- Slide 5: Extra text slide -->
+  <div class="slide">
+      <h1>Tapai ko lagii mero maya kailee kaam hune walla xainaa nanuuu jhan dherr badeko badei matraa hunxaa bachhaa❤️.<br>
+        Yoo kta tapaii laii ekdammm mayaa garxaa nanuuu raa kailee xord deinaa bachhaa❤️❤️.<br>
+        Happy Birthdayy merooo sanuuu merooo naniiiii tapaii laiiii🎂❤️💋❤️</h1>
+      <button class="nextBtn">Next ➡️</button>
+  </div>
+
+  <!-- Slide 6: Ring Box -->
+  <div class="slide">
+      <div class="ring-box">💍</div>
+      <h2 class="final-message">Linuu babeee lagaunuu tapaii ko lagi 💖</h2>
+      <button class="nextBtn">Finish 🎉</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    const buttons = document.querySelectorAll(".nextBtn");
+    const emojis = ["🎈", "😘", "💋"];
+
+    // Slide navigation
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        slides[currentSlide].classList.remove("active");
+        if (currentSlide < slides.length - 1) {
+          currentSlide++;
+        } else {
+          currentSlide = 0;
+        }
+        slides[currentSlide].classList.add("active");
+      });
+    });
+
+    // Continuous emoji shower
+    function createEmoji() {
+      const emoji = document.createElement("div");
+      emoji.classList.add("emoji");
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.animationDuration = (3 + Math.random() * 2) + "s";
+      document.body.appendChild(emoji);
+
+      setTimeout(() => { emoji.remove(); }, 5000);
+    }
+    setInterval(createEmoji, 400);
+
+    // Autoplay background music
+    const bgMusic = document.getElementById("bg-music");
+    bgMusic.volume = 0.2; // soft background
+    bgMusic.play();
+  </script>
+</body>
+</html>
